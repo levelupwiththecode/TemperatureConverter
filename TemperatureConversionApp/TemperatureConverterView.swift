@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct TemperatureConverterView: View {
-    @State private var conversionUnitInput = "Celcius"
-    @State private var conversionUnitOutput = ""
     @State private var temperatureToConvert = 0.0
-    @State private var selectedUnit = "Fahrenheit"
+    @State private var selectedUnit = ""
     @FocusState private var temperatureIsFocused: Bool
     
     let temperatureUnits = ["Celcius", "Fahrenheit", "Kelvin"]
@@ -37,28 +35,27 @@ struct TemperatureConverterView: View {
     }
     
     
-     func kelvinToCelcius(kelvin: Double) -> Double {
-         let tempInCelcius = kelvin - 273.15
-         return tempInCelcius
-     }
-     
-     func kelvinToFahrenheit(kelvin: Double) -> Double {
-         let tempFahrenheit = (kelvin - 273.15) * 9/5 + 32
-         return tempFahrenheit
-     }
-     
-                    
-
+    func kelvinToCelcius(kelvin: Double) -> Double {
+        let tempInCelcius = kelvin - 273.15
+        return tempInCelcius
+    }
+    
+    func kelvinToFahrenheit(kelvin: Double) -> Double {
+        let tempFahrenheit = (kelvin - 273.15) * 9/5 + 32
+        return tempFahrenheit
+    }
+    
+    
+    
     var body: some View {
         NavigationStack {
             VStack {
-                
                 Form {
                     Section("Temperature to convert") {
                         TextField("temperature to convert", value: $temperatureToConvert, format: .number)
                             .keyboardType(.numberPad)
                             .focused($temperatureIsFocused)
-                        Picker("unit to convert", selection: $conversionUnitInput) {
+                        Picker("unit to convert", selection: $selectedUnit) {
                             ForEach(temperatureUnits, id: \.self) { unit in
                                 Text("\(unit)")
                             }
@@ -68,20 +65,19 @@ struct TemperatureConverterView: View {
                     
                     if selectedUnit == "Celcius" {
                         Section("Celcius") {
-                            Text("\(celciusToFahrenheit(celcius: temperatureToConvert), format: .number) Fahrenheit ")
+                            Text("\(celciusToFahrenheit(celcius: temperatureToConvert), format: .number)  Fahrenheit ")
                             Text("\(celciusToKelvin(celcius: temperatureToConvert), format: .number) Kelvin")
-                            }
+                        }
                     } else if selectedUnit == "Fahrenheit" {
-                            Section("Fahrenheit") {
-                                    Text("\(fahrenheitToCelcius(fahrenheit: temperatureToConvert), format: .number) celcius ")
-                                Text("\(fahrenheitToKelvin(fahrenheit: temperatureToConvert), format: .number) Kelvin")
-                            }
-                        } else {
-                            Section("Kelvin") {
-                                    Text("\(kelvinToCelcius(kelvin: temperatureToConvert), format: .number) celcius ")
-                                Text("\(kelvinToFahrenheit(kelvin: temperatureToConvert), format: .number) Fahrenheit")
-         
-                            }
+                        Section("Fahrenheit") {
+                            Text("\(fahrenheitToCelcius(fahrenheit: temperatureToConvert), format: .number) celcius ")
+                            Text("\(fahrenheitToKelvin(fahrenheit: temperatureToConvert), format: .number) Kelvin")
+                        }
+                    } else if selectedUnit == "Kelvin" {
+                        Section("Kelvin") {
+                            Text("\(kelvinToCelcius(kelvin: temperatureToConvert), format: .number) celcius ")
+                            Text("\(kelvinToFahrenheit(kelvin: temperatureToConvert), format: .number) Fahrenheit")
+                        }
                     }
                     
                 }
