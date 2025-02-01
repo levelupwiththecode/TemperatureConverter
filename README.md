@@ -1,28 +1,28 @@
-🌡️ Temperature Converter App
+# 🌡️ Temperature Converter App
 
 A SwiftUI application to convert temperatures between Celsius, Fahrenheit, and Kelvin.
 
-🛠️ Technologies Used
+## 🛠️ Technologies Used
 
-SwiftUI
-MVVM Architecture
-Google AdMob SDK (Ads)
-
-
-📂 Project Structure
-
-Model: TemperatureConverter.swift - Handles conversion logic.
-ViewModel: TemperatureViewModel.swift - Provides data and updates the view.
-View: TemperatureConverterView.swift - User interface.
-
-🚀 Features
-
-✅ Convert between Celsius, Fahrenheit, and Kelvin
-✅ Simple and intuitive UI
-✅ AdMob ads integration
+- SwiftUI
+- MVVM Architecture
+- Google AdMob SDK (Ads)
 
 
-📦 Installation
+## 📂 Project Structure
+
+- Model: TemperatureConverter.swift - Handles conversion logic.
+- ViewModel: TemperatureViewModel.swift - Provides data and updates the view.
+- View: TemperatureConverterView.swift - User interface.
+
+## 🚀 Features
+
+- ✅ Convert between Celsius, Fahrenheit, and Kelvin
+- ✅ Simple and intuitive UI
+- ✅ AdMob ads integration
+
+
+## 📦 Installation
 
 1. Clone the repository:
 
