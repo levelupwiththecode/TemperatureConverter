@@ -24,3 +24,4 @@ struct AdBannerView: UIViewRepresentable {
   
 }
 
+// https://developers.google.com/admob/ios/privacy/strategies?hl=fr#skadnetwork
