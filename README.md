@@ -1,8 +1,6 @@
 🌡️ Temperature Converter App
 
-A SwiftUI application for converting temperatures between Celsius, Fahrenheit, and Kelvin.
-
-![Simulator Screenshot - iPhone 15 Pro - 2025-02-01 at 14 24 45](https://github.com/user-attachments/assets/7d87b088-b2cb-413d-83ca-ed2bee9afc92)
+A SwiftUI application to convert temperatures between Celsius, Fahrenheit, and Kelvin.
 
 🛠️ Technologies Used
 
@@ -36,7 +34,3 @@ cd TemperatureConverter
 4. Replace AdMob identifiers with your own.
 5. Run the app on a simulator or a real device.
 
-
-📜 License
-
-This project is licensed under the MIT License.
